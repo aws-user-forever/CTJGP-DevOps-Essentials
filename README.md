@@ -283,10 +283,10 @@ sudo apt update
 cd ~
 mkdir ansible && cd ansible
 ```
-#### Now, Download the playbook, which will deploy packages onto the `Docker-server` and `Jenkins-Server.` and modify Java Version under Jenkins Playto openjdk-17-jre-headless
+#### Now, Download the playbook, which will deploy packages onto the `Docker-server` and `Jenkins-Server.`
 ```
-wget https://devops-e-e.s3.ap-south-1.amazonaws.com/DevOpsSetup.yml
-sudo vi DevOpsSetup.yml
+wget https://devops-e-e.s3.ap-south-1.amazonaws.com/DevOpsSetup.yml](https://devosp-essentials-lab.s3.amazonaws.com/DevOpsSetup.yml
+
 ```
 #### After updating save the changes and Run the above playbook to deploy the packages
 ```
