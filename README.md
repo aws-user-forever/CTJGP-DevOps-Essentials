@@ -62,7 +62,7 @@ terraform -v
 rm terraform_1.6.4_linux_amd64.zip
 ```
 ---------------------------------------------------------------------
-### Task-2: Install Python 3, pip, AWS CLI, and Ansible
+### Task-2: Install pip, AWS CLI, and Ansible
 Install Python 3 and the required packages:
 ```
 sudo apt-get update
