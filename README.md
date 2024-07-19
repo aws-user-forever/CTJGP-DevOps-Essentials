@@ -655,7 +655,7 @@ sudo service tomcat10 status
 * Now you can check the Tomcat running on **port 9999** on the same machine.
 * We need to copy the **.war** file created in the previous Jenkins build from the Jenkins workspace to tomcat webapps directory to serve the web content
 ```
-sudo cp -R /var/lib/jenkins/workspace/hello-world/target/hello-world-war-1.0.0.war /var/lib/tomcat9/webapps
+sudo cp -R /var/lib/jenkins/workspace/hello-world/target/hello-world-war-1.0.0.war /var/lib/tomcat10/webapps
 ```
 The above command is copying a `WAR (Web Application Archive)` file from the Jenkins workspace to the Tomcat web apps directory. Let's break down the command:
 
@@ -675,10 +675,10 @@ This command assumes that your Jenkins job has built a WAR file named `hello-wor
 * Now, you can see that Tomcat is now serving your web page
 * Now, Stop tomcat9 and remove it. Otherwise, it will slow down the Jenkins server.
 ```
-sudo service tomcat9 stop
+sudo service tomcat10 stop
 ```
 ```
-sudo apt remove tomcat9 -y
+sudo apt remove tomcat10 -y
 ```
 ---------------------------------------------------------------------
 **Summary:**
