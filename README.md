@@ -576,7 +576,7 @@ sudo cat /var/lib/jenkins/secrets/initialAdminPassword
 3. Once the installation is completed, click on **Go back to the top page**.
 4. On Home Page select **Manage Jenkins** > **Tool**.
 5. Inside Tool Configuration, look for **Maven installations**, click **Add Maven**. 
-6. Give the **Name as "Maven"**, choose **Version as 3.9.5**, and **Save** the configuration.
+6. Give the **Name as "Maven"**, choose **Version as 3.9.8**, and **Save** the configuration.
 7. Now you need to make a project for your application build, that selects **New Item** from the Home Page of Jenkins
 8. Enter an item name as **hello-world** and select the project as **Maven Project** and then **click OK.**
    ( You will be prompted to the configure page inside the hello-world project.)
