@@ -606,23 +606,23 @@ sudo cat /var/lib/jenkins/secrets/initialAdminPassword
 sudo apt update
 ```
 ```
-sudo apt install tomcat9 tomcat9-admin -y
+sudo apt install tomcat10 tomcat10-admin -y
 ```
 ```
 ss -ltn
 ```
 when you run `ss -ltn` command you'll see a list of `TCP sockets` that are in a listening state, and the output will include information such as the `local address,` `port,` and the `state of each socket.`
 ```
-sudo systemctl enable tomcat9
+sudo systemctl enable tomcat10
 ```
 Now we need to navigate to **server.xml** to change the Tomcat port number from **8080 to 9999**.
 (As port number 8080 is already being used by the Jenkins website)
 ```
-sudo vi /etc/tomcat9/server.xml
+sudo vi /etc/tomcat10/server.xml
 ```
 **(Optional step):** If you are unable to open the file then change the permissions by using the below command.
 ```
-sudo chmod 766 /etc/tomcat9/server.xml
+sudo chmod 766 /etc/tomcat10/server.xml
 ```
 #### Change 8080 to 9999
 * press esc & Enter **":"** and copy paste below code and hit enter
@@ -633,18 +633,18 @@ Save the file using `ESCAPE+:wq!`
 
 * To Verify whether the Port is changed, execute the below Command.
 ```
-cat /etc/tomcat9/server.xml
+cat /etc/tomcat10/server.xml
 ```
 **(Optional step):** If you are unable to open the file then change the permissions by using the below command.
 ```
-sudo chmod 766 /etc/tomcat9/server.xml
+sudo chmod 766 /etc/tomcat10/server.xml
 ```
 Now restart the system for the changes to take effect
 ```
-sudo service tomcat9 restart
+sudo service tomcat10 restart
 ```
 ```
-sudo service tomcat9 status
+sudo service tomcat10 status
 ```
 **To exit**, press **ctrl+c**
 
