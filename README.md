@@ -766,7 +766,7 @@ vi /root/.ssh/authorized_keys
 3. Fill out the details for the node docker-agent as given below.
 * The name should be given as **docker-agent**,
 * Remote Root Directory as **/home/ubuntu**,
-* labels to be **Slave-Agents**,
+* labels to be **Jenkins-Agents**,
 * usage to be given as **"use this node as much as possible"**
 * Launch method to be set as **"launch agents via SSH"**.
 * In the host section, give the **Public IP of the Docker instance**.
@@ -826,7 +826,7 @@ Once you build this Docker image and run a container based on it, your Java web 
 1. Go to your **Jenkins Home page**, click on the **drop-down** on **hello-world project**, and select Configure 
 tab.
 2. In **General Tab**, Select **Restrict where this project can be run** and enter Label Expression as 
-**Slave-Agents**
+   **Jenkins-Agents**
 3. Go to **Post Steps Tab**, select **"Run only if the build succeeds"** then click on **Add post-build** step select **Execute shell** from the drop-down and copy paste the below commands in the shell and **Save**
 
 **Execute shell commands in Jenkins:**
