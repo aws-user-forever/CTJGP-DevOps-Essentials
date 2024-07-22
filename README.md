@@ -598,7 +598,7 @@ sudo cat /var/lib/jenkins/secrets/initialAdminPassword
 
 ![image](https://github.com/janjiralakirankumar/DevOpsEssentials/assets/137407373/d5dde194-f10d-4b4d-a20c-890e9ca3e392)
 
-* Now, SSH into the Jenkins server (Make sure that you are the root user and Install the Tomcat web server)
+* Now, SSH into the Jenkins server 
 * **Note:** (If you are already in Jenkins Server, again SSH is not needed.)
 
 1. Follow below steps:
@@ -732,10 +732,10 @@ Then, Click on **Add Webhook**.
 
 #### =============================END of LAB-04=============================
 ---
-## Lab-5: Configuring Docker Machine as Jenkins Slave, build and deploy code in Docker Host as a container
+## Lab-5: Configuring Docker Machine as Jenkins Agent, build and deploy code in Docker Host as a container
 
 **Objective:**
-In this lab, you will set up a Docker container as a Jenkins slave, build a Docker image for a Java web application, and deploy it in a Docker container.
+In this lab, you will set up a Docker container as a Jenkins Agent, build a Docker image for a Java web application, and deploy it in a Docker container.
 
 ![image](https://github.com/janjiralakirankumar/DevOpsEssentials/assets/137407373/9139c0b6-2571-4606-84d0-22dac79d479e)
 
@@ -759,14 +759,14 @@ vi /root/.ssh/authorized_keys
 ```
 * Save the file using `ESCAPE+:wq!`
 
-### Task-1: Configuring Docker Machine as Jenkins Slave.
+### Task-1: Configuring Docker Machine as Jenkins Agent.
 
 1. Go to **Jenkin's home page** and click on the **Manage Jenkins** and **Nodes**.
-2. Click on **New Node** in the next window. Give the node name as **docker-slave** and Select **"permanent agent"**
-3. Fill out the details for the node docker-slave as given below.
-* The name should be given as **docker-slave**,
+2. Click on **New Node** in the next window. Give the node name as **docker-agent** and Select **"permanent agent"**
+3. Fill out the details for the node docker-agent as given below.
+* The name should be given as **docker-agent**,
 * Remote Root Directory as **/home/ubuntu**,
-* labels to be **Slave-Nodes**,
+* labels to be **Slave-Agents**,
 * usage to be given as **"use this node as much as possible"**
 * Launch method to be set as **"launch agents via SSH"**.
 * In the host section, give the **Public IP of the Docker instance**.
@@ -826,11 +826,11 @@ Once you build this Docker image and run a container based on it, your Java web 
 1. Go to your **Jenkins Home page**, click on the **drop-down** on **hello-world project**, and select Configure 
 tab.
 2. In **General Tab**, Select **Restrict where this project can be run** and enter Label Expression as 
-**Slave-Nodes.**
+**Slave-Agents**
 3. Go to **Post Steps Tab**, select **"Run only if the build succeeds"** then click on **Add post-build** step select **Execute shell** from the drop-down and copy paste the below commands in the shell and **Save**
 
 **Execute shell commands in Jenkins:**
-#### Note: You may replace 'yourname' with your actual first name (lines 3 and 5).
+
 
 ```
 #!/bin/bash
@@ -884,8 +884,8 @@ To access the Page In Browser Type **"http:// < Your Docker Host Public IP >:808
 * **Example:** http://3.95.192.77:8080/hello-world-war-1.0.0/
 ---
 **Summary:**
-1. Configure a Jenkins slave node ie... named as "docker-slave."
-2. Configure the slave node to use SSH for communication.
+1. Configure a Jenkins agent node ie... named as "docker-agent"
+2. Configure the agent node to use SSH for communication.
 3. Set up a Dockerfile to define the Docker image for the Java web application.
 4. Create a Jenkins job to build and deploy the Java web application in a Docker container.
 5. Add post-build steps to the Jenkins job to copy the WAR file, build the Docker image, and run a Docker container.
