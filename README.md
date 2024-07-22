@@ -747,11 +747,11 @@ sudo su
 ```
 * Generate a key-pair
 ```
-ssh-keygen
+ssh-keygen -t ed25519
 ```
 * Add the public key to the authorized_keys
 ```
-cat /root/.ssh/id_rsa.pub
+cat /root/.ssh/ed25519.pub
 ```
 * Copy the contents of the file and paste in authorized_keys
 ```
@@ -778,7 +778,7 @@ vi /root/.ssh/authorized_keys
 To get the private key, Go to your **Docker-server** and run below command.
 ```
 cd /root/.ssh
-cat id_rsa
+cat ed25519
 ```
 * Copy the entire content, including the **first and last lines**. Paste it into the space provided for the **private key** then click on **Add**.
 * Now, In SSH Credentials, choose the newly created **root** credentials.
